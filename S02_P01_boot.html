@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/min.css" />
+    <script>
+        function show()
+        {
+            var count = document.getElementById("count").innerHTML
+            count++;
+            document.getElementById("count").innerHTML = count
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="card" style="width: 18rem;">
+            <span id="count">1000</span>
+            <img src="./src/imgs/poster.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <button class="btn btn-primary" onclick="show()">Add to cart</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
