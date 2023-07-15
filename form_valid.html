@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: 10px;
+            width: 70%;
+        }
+        .error{
+            color: red;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <form action="https://www.google.com" onsubmit="return checkValid()">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full name</label>
+                <span id="fullNameError" class="error"></span>
+                <input type="text" class="form-control" onfocus="removeError(this)" id="fullName" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="userName" class="form-label">User name</label>
+                <span id="userNameError" class="error"></span>
+                <input type="text" class="form-control" onfocus="removeError(this)" id="userName" aria-describedby="emailHelp">
+              </div>
+            <div class="mb-3">
+              <label for="emailId" class="form-label">Email address</label>
+              <span id="emailIdError" class="error"></span>
+              
+              <input type="email" class="form-control" onfocus="removeError(this)" id="emailId" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="subjectList" class="form-label">Subject</label>
+              <span id="subjectListError" class="error"></span>
+              
+              <input  list="subjects" class="form-control" onfocus="removeError(this)" id="subjectList">
+                <datalist id="subjects">
+                    <option value="Python"></option>
+                    <option value="Java"></option>
+                    <option value="C++"></option>
+                    <option value="Python3.8"></option>
+                </datalist>
+            </div>
+ 
+            <div class="mb-3">
+                <label for="pass1" class="form-label">Password</label>
+                <span id="pass1Error" class="error"></span>
+              
+                <input type="password" class="form-control" onfocus="removeError(this)" id="pass1" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3">
+                <label for="pass2" class="form-label">Password confirm</label>
+                <span id="pass2Error" class="error"></span>
+                <input type="password" class="form-control" onfocus="removeError(this)" id="pass2" aria-describedby="emailHelp">
+              </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </section>
+</body>
+</html>
+
+<script>
+    // declare
+ 
+    function checkValid()
+    {
+        isError = false;
+        
+        if(fullName.value=="")
+        {
+            isError = true;
+            document.getElementById("fullNameError").innerHTML = "Please.. full name"
+            fullName.style.border="1px red solid"
+        }
+         
+        if(userName.value=="")
+        {
+            isError = true;
+
+            document.getElementById("userNameError").innerHTML = "Please.. full name"
+            userName.style.border="1px red solid"
+        }
+        if(emailId.value=="")
+        {
+            isError = true;
+
+            document.getElementById("emailIdError").innerHTML = "Please.. full name"
+            emailId.style.border="1px red solid"
+        }
+        if(subjectList.value=="")
+        {
+            isError = true;
+
+            document.getElementById("subjectListError").innerHTML = "Please.. full name"
+            subjectList.style.border="1px red solid"
+        }
+
+        if(pass1.value=="")
+        {
+            isError = true;
+
+            document.getElementById("pass1Error").innerHTML = "Please.. full xx name"
+            pass1.style.border="1px red solid"
+        }
+
+        if(pass2.value=="")
+        {
+            isError = true;
+
+            document.getElementById("pass2Error").innerHTML = "Please.. yy full name"
+            pass2.style.border="1px red solid"
+        }
+
+        if(pass2.value != pass1.value)
+        {
+            isError = true
+
+            document.getElementById("pass2Error").innerHTML =  "password doest not match.."
+
+        }
+        return !isError
+        
+    }
+
+    pass2.oninput = function()
+    {
+        passCross()
+    }
+
+    pass1.oninput = function(){
+        passCross()
+    }
+
+    function passCross()
+    {
+        if(pass1.value.startsWith(pass2.value))
+        {
+            pass2.style.color = "green"
+            pass2Error.innerHTML = ""
+        }
+        else{
+            pass2Error.innerHTML = "plese not match"
+
+            pass2.style.color = "red"
+        }
+    }
+    function removeError(field)
+    {
+        document.getElementById(field.id+"Error").innerHTML = ""
+        field.style.border ="1px grey solid"
+    }
+
+</script>
