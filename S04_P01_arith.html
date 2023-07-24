@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+    <link rel="stylesheet" href="./src/min.css">
+    <style>
+        
+        
+        section{
+            margin: 100px;
+        }
+
+        .btn{
+            margin: 20px;
+        }
+        .form-control{
+            width: min-content;
+            border: none;
+            border-bottom: 1px grey solid;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <input class="form-control" type="number" placeholder="enter number " id="num1" />
+        <input class="form-control" type="number" placeholder="enter number " id="num2" />
+
+        <button class="btn" id="btnPlus">+</button>
+        <button class="btn" id="btnMinus">-</button>
+        <button class="btn">*</button>
+        <button class="btn">/</button>
+        <button class="btn">%</button>
+
+        <hr>
+        <span id="output"></span>
+    </section>
+
+    <script>
+
+
+            btnPlus.onclick = function(){
+                
+                // type casting.
+                var x = parseInt(num1.value)+parseInt(num2.value)
+                output.innerHTML = num1.value+" + "+num2.value+" = "+x;
+            }
+
+            btnMinus.onclick = function(){
+                
+                // type casting.
+                var x = parseInt(num1.value)-parseInt(num2.value)
+                output.innerHTML = num1.value+" - "+num2.value+" = "+x;
+            }
+
+    </script>
+</body>
+</html>
+
