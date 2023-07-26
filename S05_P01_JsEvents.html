@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+    <link rel="stylesheet" href="./src/min.css">
+    <style>
+        * {
+            margin: 10px;
+        }
+
+        section {
+            margin: 100px;
+        }
+
+        div {
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <input type="text" class="form-control" id="tag">
+        <div id="squre">
+
+        </div>
+        <span id="output"></span>
+    </section>
+
+    <script>
+
+
+        squre.onmouseover = function () {
+
+            // alert("Hello World")
+            squre.style.borderRadius = "50%"
+            squre.style.background = "blue"
+        }
+
+        squre.onmouseout = function () {
+            squre.style.borderRadius = "0px"
+            squre.style.background = "red"
+
+        }
+
+        tag.onchange = function () {
+            output.innerHTML = "you stopped"
+            squre.style.background = "blue"
+
+        }
+
+        tag.onkeydown = function () {
+            output.innerHTML = "you are typing..."
+            squre.style.background = "green"
+
+        }
+        tag.onkeyup = function () {
+            output.innerHTML = "you stopped"
+            squre.style.background = "yellow"
+
+        }
+        tag.onkeypress = function () {
+            squre.style.background = "pink"
+
+            output.innerHTML = "you are typing..."
+        } 
+
+        .onload = function(){
+            alert("Hello User.")
+        }
+    </script>
+</body>
+
+</html>
