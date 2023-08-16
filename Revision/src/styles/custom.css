@@ -1,0 +1,15 @@
+.content{
+    min-height: 100vh;
+}
+.active{
+    color:red !important;
+    letter-spacing: 5px;
+}
+
+.content form{
+    width: 350px;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
