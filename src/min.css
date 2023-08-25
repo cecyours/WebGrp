@@ -11740,3 +11740,13 @@ fieldset:disabled .btn {
 .card img:hover{
     transform: scale(1.1);
 }
+/* custome css */
+
+section.document{
+    margin: 100px;
+    
+}
+
+section.document form{
+    width: 50%;
+}
