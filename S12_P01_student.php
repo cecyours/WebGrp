@@ -70,6 +70,8 @@
                 success : function(response){
 
                     alert(response)
+                    $("#student_name").val("")
+                    $("#student_mark").val("")
                 }
             })
         })
