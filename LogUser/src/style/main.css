@@ -1,0 +1,22 @@
+.content_coder{
+    min-height: 100vh;
+}
+/* Width */
+::-webkit-scrollbar {
+    width: 5px; /* Adjust width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white; /* Background color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #02738a; /* Background color of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff9595; /* Change the background color of the handle when hovered */
+}

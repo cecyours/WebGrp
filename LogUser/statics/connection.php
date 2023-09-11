@@ -1,0 +1,4 @@
+<?php
+    // connect to mysqli
+
+?>
