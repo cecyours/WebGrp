@@ -7,5 +7,5 @@
 <link rel="stylesheet" href="<?=BASE_URL?>/src/style/main.css">
 
 <script src="<?=BASE_URL?>/src/js/min.js"></script>
-<script src="<?=BASE_URL?>/src/js/main.js"></script>
 <script src="<?=BASE_URL?>/src/js/jquery.js"></script>
+<script src="<?=BASE_URL?>/src/js/main.js"></script>

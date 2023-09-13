@@ -1,3 +1,11 @@
+:root{
+    --red-dash:rgb(240, 0, 0);
+}
+.error{
+    color:var(--red-dash);
+    float:right;
+}
+
 .content_coder{
     min-height: 100vh;
 }

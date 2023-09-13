@@ -44,18 +44,25 @@ require __DIR__ . '/links.php';
                 <form id="signUpForm">
                 <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <span class="error" id="userNameError"></span>
+                        <input type="text" class="form-control" id="userName">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="userEmail" class="form-label">Email address</label>
+                        <span class="error" id="userEmailError"></span>
+                        <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="userPassword1" class="form-label">Password</label>
+                        <span class="error" id="userPassword1Error"></span>
+                        <input type="password" class="form-control" id="userPassword1">
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <label for="userPassword2" class="form-label">Confirm Password</label>
+                        <span class="error" id="userPassword2Error"></span>
+                        <input type="password" class="form-control" id="userPassword2">
+                    </div>
+                    <button type="button" id="btnSignUp" class="btn btn-primary">Submit</button>
                 </form>
             </div>
             <div class="modal-footer">
