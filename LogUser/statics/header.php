@@ -13,15 +13,17 @@ require __DIR__ . '/links.php';
             <div class="modal-body">
                 <form id="loginForm">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="userNameEmail" class="form-label">Email address</label>
+                        <span class="error" id="userNameEmailError"></span>
+                        <input type="text" class="form-control" id="userNameEmail" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="userPassword" class="form-label">Password</label>
+                        <span class="error" id="userPasswordError"></span>
+                        <input type="password" class="form-control" id="userPassword">
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary" id="btnLogin">Submit</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -33,6 +35,7 @@ require __DIR__ . '/links.php';
 </div>
 <div class="modal fade" id="signUpModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
     tabindex="-1">
+
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -45,22 +48,22 @@ require __DIR__ . '/links.php';
                 <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
                         <span class="error" id="userNameError"></span>
-                        <input type="text" class="form-control" id="userName">
+                        <input type="text" class="form-control" id="userName" value="kites">
                     </div>
                     <div class="mb-3">
                         <label for="userEmail" class="form-label">Email address</label>
                         <span class="error" id="userEmailError"></span>
-                        <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="userEmail" value="kites@134.coder" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="userPassword1" class="form-label">Password</label>
                         <span class="error" id="userPassword1Error"></span>
-                        <input type="password" class="form-control" id="userPassword1">
+                        <input type="password" class="form-control" value="123" id="userPassword1">
                     </div>
                     <div class="mb-3">
                         <label for="userPassword2" class="form-label">Confirm Password</label>
                         <span class="error" id="userPassword2Error"></span>
-                        <input type="password" class="form-control" id="userPassword2">
+                        <input type="password" class="form-control" value="123" id="userPassword2">
                     </div>
                     <button type="button" id="btnSignUp" class="btn btn-primary">Submit</button>
                 </form>
@@ -115,4 +118,17 @@ require __DIR__ . '/links.php';
 
         </div>
     </div>
-</nav>
+</nav> 
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        
+      <strong class="me-auto"><span id="toastTitle"></span></strong>
+      <small>Now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        <span id="toastMsg"></span>
+    </div>
+  </div>
+</div>
