@@ -28,3 +28,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #ff9595; /* Change the background color of the handle when hovered */
 }
+
+.dropdown-menu{
+    margin-left: -100px;
+}

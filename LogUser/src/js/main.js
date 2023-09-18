@@ -1,9 +1,35 @@
 $(document).ready(function(){
 
-    
+    $("#btnLogOut").click(function(){
+
+
+        $.ajax({
+            url:'./api/user/index.php',
+            type:'post',
+            data:{
+                request_:'logout_user'
+            },
+            dataType:'json',
+            success:function(response){
+
+                
+                    $("#toastTitle").text(response.status)
+                    $("#toastTitle").css("color",response.color )
+                    $("#toastMsg").text(response.message)
+                    $('#liveToast').toast('show')
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
+                
+            }
+            
+            
+        })
+    })
     $("#btnLogin").click(function(){
         var  err = false
-
+        
+        
         if(isError("userNameEmail","Enter username/ email"))
         {
             err = true
@@ -12,8 +38,37 @@ $(document).ready(function(){
         {
             err = true
         }
-
+        
         // rest code
+        
+        if(err)
+         return
+        console.log("Hiii")
+
+            $.ajax({
+                url:'./api/user/index.php',
+                type:'post',
+                data:{
+                    request_:'verify_user',
+                    userEName:$("#userNameEmail").val(),
+                    userPass:$("#userPassword").val(),
+                },
+                dataType:'json',
+                success:function(response){
+
+                    $("#toastTitle").text(response.status)
+                    $("#toastTitle").css("color",response.color )
+                    $("#toastMsg").text(response.message)
+                    $('#liveToast').toast('show')
+
+                    if(response.status.toString()=="Success")
+                    {
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 3000);
+                    } 
+                }
+            })
     })
 
     $("#btnSignUp").click(function(){
@@ -70,6 +125,9 @@ $(document).ready(function(){
                 $("#toastTitle").css("color",response.color )
                 $("#toastMsg").text(response.message)
                 $('#liveToast').toast('show')
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             }            
         })
     })
