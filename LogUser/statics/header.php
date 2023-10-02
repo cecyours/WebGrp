@@ -85,10 +85,10 @@ require __DIR__ . '/links.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="<?=BASE_URL?>/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="<?=BASE_URL?>/letter.php">Letter</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -131,7 +131,7 @@ require __DIR__ . '/links.php';
                 } else {
                     ?>
                     <li class="nav-item">
-                        <button class="nav-link btn-light border-0" tabindex="-1" aria-disabled="true"
+                        <button class="nav-link btn-light border-0" id="logInBtn" tabindex="-1" aria-disabled="true"
                             data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
                     </li>
                     <li class="nav-item">
